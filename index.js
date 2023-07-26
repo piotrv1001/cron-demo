@@ -4,6 +4,10 @@ const cron = require('node-cron');
 
 function sendEmail(to, subject, message) {
   return new Promise((resolve, reject) => {
+    console.log('EMAIL_USERNAME: ', process.env.EMAIL_USERNAME);
+    console.log('EMAIL_PASSWORD: ', process.env.EMAIL_PASSWORD);
+    console.log('EMAIL_SENDER: ', process.env.EMAIL_SENDER);
+    console.log('EMAIL_RECEIVER: ', process.env.EMAIL_RECEIVER);
     const transporter = nodemailer.createTransport({
       host: 'smtp.zoho.eu',
       port: 465,
